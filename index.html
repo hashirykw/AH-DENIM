@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AH Denim — Cut-to-pack denim manufacturer, Karachi</title>
+<meta name="description" content="AH Denim is a Karachi cut-to-pack manufacturer of denim and woven garments for men, women and kids — in-house washing, laser, appliqué, embroidery and print for fashion brands in the UK, US and Europe.">
+<meta name="theme-color" content="#03070f">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Hallmark · redesign (brand preserved) · pre-emit critique: P4 H5 E4 S5 R4 V4
+ * DNA kept from ahdenim.net: navy-black ground, steel-blue accent, heavy extended caps,
+ * solid-line / outline-line headline pairs, tracked labels with lead rule, per-technique accents.
+ */
+:root{
+  --ink-0:#03070f; --ink-1:#060e1c; --ink-2:#0b1729; --ink-3:#12213a;
+  --line:rgba(141,180,230,.14); --line-2:rgba(141,180,230,.28);
+  --paper:#f3f6fb; --text:#b9c4d4; --muted:#8392a8; --dim:#56657c;
+  --steel:#8db4e6; --steel-deep:#2b4c8c; --glow:rgba(43,76,140,.55);
+  --gold:#caa35e; --green:#72c093; --rose:#d9918f;
+  --garment:#46453d; --wa:#25d366; --danger:#ef8f8f;
+  --outline:rgba(141,180,230,.55);
+  --accent:var(--steel);
+  --font-display:"Archivo","Arial Black",Impact,sans-serif;
+  --font-body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1240px; --gut:clamp(20px,4vw,56px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:calc(84px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--ink-0);color:var(--text);font:400 16px/1.7 var(--font-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--steel);outline-offset:3px}
+.wrap{width:min(100% - 2*var(--gut),var(--wrap));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- type ---------- */
+.d{font-family:var(--font-display);font-weight:900;font-stretch:118%;text-transform:uppercase;line-height:.9;letter-spacing:-.01em;color:var(--paper);margin:0;overflow-wrap:anywhere;min-width:0}
+.d .o{display:block;color:transparent;-webkit-text-stroke:1.4px var(--outline)}
+.d .s{display:block}
+.d-xl{font-size:clamp(2.6rem,9vw,8.6rem)}
+.d-l{font-size:clamp(2.3rem,6vw,5.4rem)}
+.d-m{font-size:clamp(1.9rem,4.2vw,3.6rem)}
+.d-s{font-size:clamp(1.3rem,2.2vw,1.7rem);font-stretch:112%;line-height:1}
+.lab{display:flex;align-items:center;gap:14px;font:600 11px/1.2 var(--font-body);letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin:0 0 22px}
+.lab::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7}
+.lab.c{justify-content:center}
+.rule{width:56px;height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin:26px 0}
+.lede{font-size:clamp(1rem,1.2vw,1.1rem);color:var(--text);max-width:58ch;margin:0}
+p{margin:0 0 1em}
+.muted{color:var(--muted)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:52px;padding:0 26px;border:1px solid var(--line-2);background:transparent;color:var(--paper);font:600 12px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background .25s var(--ease),border-color .25s,color .25s,transform .15s}
+.btn:hover{border-color:var(--steel);background:rgba(141,180,230,.08)}
+.btn:active{transform:translateY(1px)}
+.btn.solid{background:var(--paper);color:var(--ink-0);border-color:var(--paper)}
+.btn.solid:hover{background:var(--steel);border-color:var(--steel)}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:var(--ink-0)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn svg{width:16px;height:16px;flex:none}
+.link{font:600 12px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--steel);border-bottom:1px solid var(--line-2);padding-bottom:6px;white-space:nowrap}
+.link:hover{border-color:var(--steel)}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.hdr.solid{background:rgba(3,7,15,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:24px;height:84px}
+.logo img{height:56px;width:auto}
+.nav{display:flex;gap:clamp(18px,3vw,44px);margin-inline:auto}
+.nav a{font:500 15px/1 var(--font-body);color:var(--paper);opacity:.72;padding:10px 0;position:relative;white-space:nowrap}
+.nav a:hover,.nav a[aria-current="page"]{opacity:1}
+.nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--steel)}
+.hdr .btn{height:44px;padding:0 18px;font-size:11px}
+.tray{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid var(--line-2);cursor:pointer;background:transparent}
+.tray svg{width:18px;height:18px}
+.tray b{position:absolute;top:-7px;right:-7px;min-width:20px;height:20px;border-radius:10px;background:var(--steel);color:var(--ink-0);font:600 11px/20px var(--font-body);text-align:center;padding:0 5px}
+.tray b:empty{display:none}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line-2);background:transparent;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:var(--paper);margin:4px auto}
+@media (max-width:980px){
+  .nav{position:fixed;inset:calc(84px + env(safe-area-inset-top,0px)) 0 auto;flex-direction:column;gap:0;background:var(--ink-1);border-bottom:1px solid var(--line);padding:8px var(--gut) 24px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:.25s var(--ease)}
+  .nav a{font-size:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .nav a[aria-current="page"]::after{display:none}
+  .hdr.open .nav{opacity:1;transform:none;pointer-events:auto}
+  .hdr.open{background:var(--ink-1)}
+  .burger{display:block}
+  .tray{margin-left:auto}
+  .hdr .quote{display:none}
+}
+
+/* ---------- views ---------- */
+[data-view]{display:none}
+[data-view].on{display:block}
+section{position:relative}
+.pad{padding-block:clamp(80px,11vw,150px)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+@media (max-width:860px){.split{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;overflow:clip;background:radial-gradient(60% 55% at 50% 58%,var(--glow),transparent 70%),var(--ink-0);padding:130px var(--gut) 120px}
+.hero .man{position:absolute;bottom:60px;height:min(74svh,740px);width:auto;z-index:2;--m:radial-gradient(55% 52% at 50% 44%,#000 55%,transparent 88%);mask-image:var(--m);-webkit-mask-image:var(--m);opacity:0;transition:opacity 1.4s var(--ease) .2s,transform 1.4s var(--ease) .2s}
+.hero .man.l{left:max(-40px,calc(50% - 740px));transform:translateX(-30px)}
+.hero .man.r{right:max(-40px,calc(50% - 740px));transform:translateX(30px)}
+.hero.go .man{opacity:1;transform:none}
+.hero-in{position:relative;display:grid;justify-items:center}
+.hero h1 .s{position:relative;z-index:3;font-size:clamp(2.9rem,9.6vw,9rem)}
+.hero h1 .o{position:relative;z-index:3;font-size:clamp(2.1rem,7.4vw,7.2rem);margin-top:.04em;-webkit-text-stroke-width:1.6px}
+.hero .lede{text-align:center;margin:30px auto 0;max-width:40ch;color:var(--text);position:relative;z-index:3}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:38px;position:relative;z-index:3}
+.hero .fx>*{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.hero.go .fx>*{opacity:1;transform:none}
+.hero.go .fx>*:nth-child(2){transition-delay:.12s}.hero.go .fx>*:nth-child(3){transition-delay:.24s}.hero.go .fx>*:nth-child(4){transition-delay:.36s}.hero.go .fx>*:nth-child(5){transition-delay:.48s}
+.facts{position:absolute;z-index:3;left:0;right:0;bottom:0;border-top:1px solid var(--line);background:linear-gradient(to top,rgba(3,7,15,.9),rgba(3,7,15,.4))}
+.facts .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.facts div{padding:18px 0;text-align:left;border-left:1px solid var(--line);padding-left:22px}
+.facts div:first-child{border-left:0;padding-left:0}
+.facts small{display:block;font:600 10px/1.2 var(--font-body);letter-spacing:.3em;text-transform:uppercase;color:var(--steel);margin-bottom:6px}
+.facts span{font:500 14px/1.3 var(--font-body);color:var(--paper)}
+@media (max-width:760px){
+  .hero{padding-bottom:180px}
+  .hero .man{height:58svh;opacity:0}
+  .hero.go .man{opacity:.42}
+  .hero .man.l{left:-70px}.hero .man.r{right:-70px}
+  .facts .wrap{grid-template-columns:minmax(0,1fr)}
+  .facts div{border-left:0;padding:10px 0;border-top:1px solid var(--line)}
+  .facts div:first-child{border-top:0}
+}
+
+/* ---------- heritage ---------- */
+.patch{position:relative;aspect-ratio:950/818;overflow:hidden}
+.patch img{width:100%;height:100%;object-fit:cover}
+.patch::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,var(--ink-0))}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 34px}
+.tags span{border:1px solid var(--line-2);padding:10px 16px;font:600 10.5px/1 var(--font-body);letter-spacing:.24em;text-transform:uppercase;color:var(--text)}
+.quote-line{border-left:1px solid var(--steel-deep);padding-left:22px;color:var(--muted);margin-top:22px}
+.quote-line b{color:var(--steel);font-weight:500}
+
+/* ---------- film ---------- */
+.film{border-radius:14px;overflow:hidden;aspect-ratio:913/458;background:var(--ink-2)}
+.film video{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---------- collections ---------- */
+.cols-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line)}
+.col{position:relative;background:var(--ink-0);overflow:hidden;display:block}
+.col img{width:100%;aspect-ratio:496/597;object-fit:cover;object-position:top;transition:transform 1.2s var(--ease)}
+.col:hover img{transform:scale(1.04)}
+.col .cap{position:absolute;left:0;right:0;bottom:0;padding:26px;background:linear-gradient(to top,rgba(3,7,15,.95) 40%,transparent)}
+.col h3{margin:0 0 6px;font:600 12px/1 var(--font-body);letter-spacing:.3em;color:var(--steel)}
+.col p{margin:0;color:var(--paper);font-size:15px}
+.col .n{position:absolute;top:22px;right:22px;font:500 12px/1 var(--font-body);color:var(--muted)}
+@media (max-width:760px){.cols{grid-template-columns:minmax(0,1fr)}.col img{aspect-ratio:4/3.4}}
+
+/* ---------- techniques ---------- */
+.tech-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:56px}
+@media (max-width:860px){.tech-head{grid-template-columns:minmax(0,1fr)}}
+.tech{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr) minmax(0,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tech-pic{position:relative;background:var(--ink-1);overflow:hidden;min-height:560px}
+.tech-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s var(--ease)}
+.tech-pic img.on{opacity:1}
+.tech-pic .num{position:absolute;left:24px;bottom:18px;font:900 64px/1 var(--font-display);font-stretch:118%;color:rgba(243,246,251,.14)}
+.tech-body{padding:clamp(28px,4vw,56px);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.tech-body .d .o{-webkit-text-stroke-color:var(--accent);opacity:.8}
+.tech-body p.lede{margin-top:4px}
+.tech-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:34px}
+.tech-tabs button{border:1px solid var(--line-2);background:transparent;padding:10px 14px;font:600 10.5px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;white-space:nowrap}
+.tech-tabs button[aria-selected="true"]{color:var(--ink-0);background:var(--accent);border-color:var(--accent)}
+.tech-feat{padding:clamp(24px,3vw,40px);display:grid;align-content:center;gap:0}
+.feat{display:grid;grid-template-columns:40px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.feat:last-child{border-bottom:0}
+.feat i{width:40px;height:40px;border:1px solid var(--line-2);border-radius:50%;display:grid;place-items:center;color:var(--accent);font-style:normal;font:600 11px/1 var(--font-body)}
+.feat h4{margin:0 0 4px;font:600 13px/1.3 var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--paper)}
+.feat p{margin:0;font-size:14px;line-height:1.55;color:var(--muted)}
+.tech [data-t]{transition:opacity .35s}
+.tech.swap [data-t]{opacity:0}
+@media (max-width:1060px){.tech{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)}.tech-feat{grid-column:1/-1;border-top:1px solid var(--line)}.tech-body{border-right:0}}
+@media (max-width:700px){.tech{grid-template-columns:minmax(0,1fr)}.tech-pic{min-height:0;aspect-ratio:612/700}.tech-body{border-left:0;border-top:1px solid var(--line)}}
+
+/* ---------- facility numbers ---------- */
+.floor{background:var(--ink-1);overflow:hidden}
+.floor .bg{position:absolute;inset:0 0 0 auto;width:62%;background-size:cover;background-position:center;opacity:.9;mask-image:linear-gradient(90deg,transparent,#000 40%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%)}
+.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line-2)}
+.nums div{padding:30px 0 26px;border-bottom:1px solid var(--line)}
+.nums div:nth-child(odd){padding-right:24px;border-right:1px solid var(--line)}
+.nums div:nth-child(even){padding-left:28px}
+.nums strong{display:block;font:900 clamp(2.2rem,4.4vw,3.8rem)/1 var(--font-display);font-stretch:112%;color:var(--paper)}
+.nums span{display:block;margin-top:10px;font:600 10.5px/1.3 var(--font-body);letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:860px){.floor .bg{width:100%;opacity:.25;mask-image:none;-webkit-mask-image:none}}
+
+/* ---------- markets ---------- */
+.bar{display:flex;height:14px;margin:40px 0 8px;gap:3px}
+.bar i{display:block;height:100%}
+.mkts{list-style:none;padding:0;margin:26px 0 0}
+.mkts li{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.mkts li i{width:10px;height:10px;border-radius:50%}
+.mkts b{display:block;font:500 17px/1.2 var(--font-body);color:var(--paper)}
+.mkts small{font:600 10px/1 var(--font-body);letter-spacing:.26em;text-transform:uppercase;color:var(--dim)}
+.mkts em{font:900 30px/1 var(--font-display);font-stretch:112%;font-style:normal;color:var(--paper)}
+.m1{background:var(--steel)}.m2{background:var(--paper)}.m3{background:var(--steel-deep)}
+
+/* ---------- washing teaser ---------- */
+.washer{position:relative;min-height:620px;display:grid;align-items:center;overflow:hidden}
+.washer .bg{position:absolute;inset:0 0 0 38%;background-size:cover;background-position:center;mask-image:linear-gradient(90deg,transparent,#000 35%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%)}
+.washer .d .hl{color:var(--steel)}
+@media (max-width:860px){.washer .bg{inset:0;opacity:.28;mask-image:none;-webkit-mask-image:none}}
+
+/* ---------- clients ---------- */
+.clients{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:56px}
+.clients>div{display:grid;place-items:center;min-height:118px;padding:18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;transition:background .3s}
+.clients>div:hover{background:var(--ink-2)}
+.clients b{font:800 clamp(1.05rem,1.6vw,1.35rem)/1.1 var(--font-display);font-stretch:108%;color:var(--paper);opacity:.82;letter-spacing:.01em}
+.clients small{display:block;margin-top:8px;font:500 11px/1.4 var(--font-body);color:var(--dim);max-width:30ch}
+.clients .big{grid-column:span 2}
+@media (max-width:520px){.clients .big{grid-column:auto}}
+
+/* ---------- cta band ---------- */
+.band{border-top:1px solid var(--line);background:radial-gradient(50% 120% at 80% 100%,var(--glow),transparent 70%),var(--ink-1)}
+.band .wrap{display:flex;justify-content:space-between;align-items:end;gap:40px;flex-wrap:wrap}
+.band .ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- page heads ---------- */
+.phead{padding:clamp(150px,18vw,210px) 0 clamp(50px,6vw,80px);border-bottom:1px solid var(--line);background:radial-gradient(50% 90% at 50% 0%,var(--glow),transparent 70%)}
+.phead.c{text-align:center}
+.phead.c .lede{margin-inline:auto}
+
+/* ---------- about ---------- */
+.pillars{margin-top:34px;border-left:1px solid var(--steel-deep);padding-left:26px;display:grid;gap:22px}
+.pillars h4{margin:0 0 4px;font:600 11.5px/1.3 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+.pillars p{margin:0;color:var(--muted);font-size:15px}
+.pocket{aspect-ratio:748/567;overflow:hidden}
+.pocket img{width:100%;height:100%;object-fit:cover}
+.over{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-2);border-bottom:1px solid var(--line)}
+.over div{padding:40px 28px;border-left:1px solid var(--line);text-align:center}
+.over div:first-child{border-left:0}
+.over strong{display:block;font:900 clamp(2.4rem,5vw,4.2rem)/1 var(--font-display);font-stretch:112%;color:var(--steel)}
+.over span{display:block;margin:14px 0 6px;font:600 11px/1 var(--font-body);letter-spacing:.3em;text-transform:uppercase;color:var(--paper)}
+.over p{margin:0;font-size:14px;color:var(--muted)}
+@media (max-width:760px){.over{grid-template-columns:minmax(0,1fr)}.over div{border-left:0;border-top:1px solid var(--line)}.over div:first-child{border-top:0}}
+
+.proc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.proc-pic{position:sticky;top:84px;height:calc(100svh - 84px);overflow:hidden;background:var(--ink-1)}
+.proc-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s var(--ease)}
+.proc-pic img.on{opacity:1}
+.proc-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--ink-0))}
+.proc-pic .tag{position:absolute;z-index:2;left:28px;bottom:28px;border:1px solid var(--line-2);padding:10px 16px;font:600 10.5px/1 var(--font-body);letter-spacing:.3em;text-transform:uppercase;color:var(--steel);background:rgba(3,7,15,.6)}
+.proc-meter{position:absolute;z-index:2;right:0;top:0;bottom:0;width:2px;background:var(--line)}
+.proc-meter i{display:block;width:100%;background:var(--steel);height:12.5%;transition:transform .5s var(--ease)}
+.steps{padding:0 clamp(24px,5vw,80px)}
+.step{min-height:calc(100svh - 84px);display:grid;align-content:center;padding:60px 0;opacity:.35;transition:opacity .5s}
+.step.on{opacity:1}
+.step .no{display:flex;gap:14px;align-items:center;margin-bottom:24px}
+.step .no b{display:grid;place-items:center;width:46px;height:34px;border:1px solid var(--line-2);font:600 11px/1 var(--font-body);letter-spacing:.14em;color:var(--steel)}
+.step .no span{font:600 10.5px/1.5 var(--font-body);letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.step .no span em{display:block;font-style:normal;color:var(--dim)}
+.step .m-pic{display:none}
+@media (max-width:860px){
+  .proc{grid-template-columns:minmax(0,1fr)}
+  .proc-pic{display:none}
+  .step{min-height:0;opacity:1;padding:48px 0;border-bottom:1px solid var(--line)}
+  .step .m-pic{display:block;aspect-ratio:940/737;object-fit:cover;width:100%;margin-bottom:28px}
+}
+.expo{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;align-items:stretch}
+.expo figure{margin:0;overflow:hidden}
+.expo figure img{width:100%;height:100%;object-fit:cover}
+.expo-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.expo-cards div{background:var(--ink-0);padding:26px}
+.expo-cards h4{margin:0 0 12px;font:600 11.5px/1.3 var(--font-body);letter-spacing:.24em;text-transform:uppercase;color:var(--paper)}
+.expo-cards p{margin:0;font-size:14px;line-height:1.65;color:var(--muted)}
+@media (max-width:960px){.expo{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.expo-cards{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- catalog ---------- */
+.cat-bar{position:sticky;top:calc(84px + env(safe-area-inset-top,0px));z-index:10;background:rgba(3,7,15,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.cat-bar .wrap{display:flex;align-items:center;gap:20px;min-height:72px;flex-wrap:wrap;padding-block:12px}
+.cat-tabs{display:flex;gap:4px}
+.cat-tabs button{background:transparent;border:0;border-bottom:2px solid transparent;padding:12px 14px;font:600 12px/1 var(--font-body);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);cursor:pointer;white-space:nowrap}
+.cat-tabs button sup{font-size:9px;color:var(--dim);margin-left:4px;letter-spacing:0}
+.cat-tabs button[aria-selected="true"]{color:var(--paper);border-color:var(--steel)}
+.search{margin-left:auto;position:relative;flex:1 1 220px;max-width:320px}
+.search input{width:100%;height:44px;background:var(--ink-1);border:1px solid var(--line-2);padding:0 14px 0 40px;font-size:14px}
+.search svg{position:absolute;left:14px;top:14px;width:16px;height:16px;color:var(--muted)}
+.count{font:500 13px/1 var(--font-body);color:var(--muted);margin:34px 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:28px 18px}
+.card{display:grid;gap:12px;text-align:left;background:none;border:0;padding:0;cursor:pointer}
+.card .ph{position:relative;background:var(--garment);aspect-ratio:3/4;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.card:hover .ph img{transform:scale(1.05)}
+.card .ph .add{position:absolute;right:10px;bottom:10px;width:36px;height:36px;border-radius:50%;background:rgba(3,7,15,.78);display:grid;place-items:center;color:var(--paper);border:1px solid var(--line-2)}
+.card .ph .add.in{background:var(--steel);color:var(--ink-0)}
+.card h3{margin:0;font:500 14px/1.35 var(--font-body);color:var(--paper)}
+.card small{font:500 11px/1 var(--font-body);color:var(--dim);letter-spacing:.14em}
+.empty{padding:60px 0;color:var(--muted)}
+@media (max-width:600px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}.card h3{font-size:13px}}
+
+/* ---------- modal / drawer ---------- */
+dialog{border:1px solid var(--line-2);background:var(--ink-1);color:var(--text);padding:0;max-width:min(920px,calc(100% - 32px));width:100%}
+dialog::backdrop{background:rgba(1,3,8,.75);backdrop-filter:blur(4px)}
+.pd{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.pd .ph{background:var(--garment)}
+.pd .ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.pd .body{padding:clamp(24px,4vw,44px);display:grid;align-content:start;gap:4px}
+.pd h2{font:800 clamp(1.4rem,2.6vw,2rem)/1.05 var(--font-display);font-stretch:108%;text-transform:uppercase;color:var(--paper);margin:0 0 14px}
+.pd p{font-size:15px;color:var(--text)}
+.pd .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.x{position:absolute;top:12px;right:12px;width:40px;height:40px;border:1px solid var(--line-2);background:var(--ink-0);color:var(--paper);cursor:pointer;font-size:18px;z-index:2}
+@media (max-width:700px){.pd{grid-template-columns:minmax(0,1fr)}.pd .ph img{aspect-ratio:4/4}}
+
+/* ---------- contact ---------- */
+.ct{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,56px);align-items:start}
+@media (max-width:960px){.ct{grid-template-columns:minmax(0,1fr)}}
+.info{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.info>a,.info>div{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:center;padding:22px;background:var(--ink-0)}
+.info>a:hover{background:var(--ink-2)}
+.info i{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--steel)}
+.info i svg{width:18px;height:18px}
+.info small{display:block;font:600 10px/1 var(--font-body);letter-spacing:.28em;text-transform:uppercase;color:var(--steel);margin-bottom:6px}
+.info span{color:var(--paper);font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.map{margin-top:18px;border:1px solid var(--line);padding:26px;background:radial-gradient(80% 90% at 30% 20%,var(--ink-3),var(--ink-1));display:grid;gap:14px}
+.map p{margin:0;color:var(--muted);font-size:14px}
+form.rfq{border:1px solid var(--line);background:var(--ink-1);padding:clamp(22px,3.4vw,40px)}
+.rfq h2{margin:0 0 6px}
+.rfq .sub{color:var(--muted);font-size:14px;margin-bottom:26px}
+.fg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.fg .full{grid-column:1/-1}
+@media (max-width:600px){.fg{grid-template-columns:minmax(0,1fr)}}
+.f label,.f legend,.f .lbl{display:block;font:600 10.5px/1 var(--font-body);letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;padding:0}
+.f input,.f select,.f textarea{width:100%;background:var(--ink-0);border:1px solid var(--line-2);padding:14px;font-size:15px;color:var(--paper);border-radius:0}
+.f textarea{min-height:120px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--steel);outline:0}
+.f .err{display:none;color:var(--danger);font-size:12px;margin-top:6px}
+.f.bad input,.f.bad select{border-color:var(--danger)}
+.f.bad .err{display:block}
+fieldset.f{border:0;margin:0;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{margin:0;letter-spacing:.14em;font-size:10.5px;color:var(--text);border:1px solid var(--line-2);padding:11px 14px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label:has(input:checked){background:var(--steel);border-color:var(--steel);color:var(--ink-0)}
+.chips label:has(input:focus-visible){outline:2px solid var(--steel);outline-offset:2px}
+.styles-picked{display:flex;flex-wrap:wrap;gap:8px}
+.styles-picked span{display:inline-flex;align-items:center;gap:8px;background:var(--ink-2);border:1px solid var(--line-2);padding:8px 10px;font-size:13px;color:var(--paper)}
+.styles-picked button{background:none;border:0;color:var(--muted);cursor:pointer;padding:0 2px}
+.styles-picked em{font-style:normal;color:var(--dim);font-size:13px}
+.f .drop{border:1px dashed var(--line-2);padding:22px;margin:0;text-align:center;color:var(--text);font:500 14px/1.4 var(--font-body);letter-spacing:0;text-transform:none;cursor:pointer;display:block}
+.f .drop:hover{border-color:var(--steel)}
+.drop input{display:none}
+.rfq .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.done{display:none;border:1px solid var(--steel-deep);background:var(--ink-2);padding:18px 20px;margin-top:20px;color:var(--paper);font-size:14px}
+.done.on{display:block}
+
+/* ---------- faq ---------- */
+.faq{max-width:900px;margin-inline:auto}
+.faq details{border:1px solid var(--line);margin-bottom:10px;background:var(--ink-1)}
+.faq summary{list-style:none;cursor:pointer;display:flex;gap:20px;justify-content:space-between;align-items:center;padding:24px 26px;font:600 13.5px/1.45 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--paper)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:34px;height:34px;border:1px solid var(--line-2);border-radius:50%;display:grid;place-items:center;transition:transform .3s var(--ease);font-style:normal;color:var(--steel)}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq details[open]{border-color:var(--line-2)}
+.faq .a{padding:0 26px 24px;color:var(--text);max-width:70ch}
+.faq .a a{color:var(--steel);border-bottom:1px solid var(--line-2)}
+
+/* ---------- footer ---------- */
+.ftr{border-top:1px solid var(--line);padding:clamp(60px,8vw,96px) 0 calc(28px + env(safe-area-inset-bottom,0px));background:var(--ink-0)}
+.ftr .top{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:40px}
+@media (max-width:900px){.ftr .top{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.ftr .top{grid-template-columns:minmax(0,1fr)}}
+.ftr h5{margin:0 0 20px;padding-bottom:16px;border-bottom:1px solid var(--line);font:600 11px/1 var(--font-body);letter-spacing:.28em;text-transform:uppercase;color:var(--paper)}
+.ftr ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.ftr li a{color:var(--muted);font-size:14.5px;white-space:nowrap}
+.ftr li a:hover{color:var(--paper)}
+.ftr .brand p{color:var(--muted);font-size:14.5px;max-width:34ch;margin-top:18px}
+.ftr .contact small{display:block;font:600 10px/1 var(--font-body);letter-spacing:.26em;text-transform:uppercase;color:var(--steel);margin:0 0 6px}
+.ftr .contact div{margin-bottom:16px;color:var(--paper);font-size:14.5px;overflow-wrap:anywhere}
+.soc{display:flex;gap:10px;margin-top:24px}
+.soc a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--text)}
+.soc a:hover{border-color:var(--steel);color:var(--paper)}
+.soc svg{width:16px;height:16px}
+.ftr .bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:12.5px;color:var(--dim)}
+.ftr .bot span:last-child{letter-spacing:.28em;text-transform:uppercase;color:var(--steel);font-size:11px}
+
+/* ---------- whatsapp fab ---------- */
+.fab{position:fixed;z-index:40;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);color:var(--ink-0)}
+.fab svg{width:28px;height:28px}
+
+/* ---------- reveal (one quiet pattern) ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .rv,.hero .fx>*,.hero .man{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="#/" aria-label="AH Denim home"><img src="assets/img/logo.png" alt="AH Denim" width="62" height="77"></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/catalog" data-nav="catalog">Catalog</a>
+      <a href="#/about" data-nav="about">About Us</a>
+      <a href="#/contact" data-nav="contact">Contact Us</a>
+      <a href="#/faq" data-nav="faq">FAQ</a>
+    </nav>
+    <button class="tray" id="trayBtn" type="button" aria-label="Your enquiry list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16l-1.4 12.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg><b id="trayN"></b>
+    </button>
+    <a class="btn solid quote" href="#/contact">Request a quote</a>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- =================== HOME =================== -->
+<main data-view="home">
+  <section class="hero" id="hero">
+    <img class="man l" src="assets/img/hero-left.jpg" alt="" aria-hidden="true">
+    <img class="man r" src="assets/img/hero-right.jpg" alt="" aria-hidden="true">
+    <div class="hero-in fx">
+      <p class="lab c">Crafted to inspire</p>
+      <h1 class="d"><span class="s">The Denim</span><span class="o">Renaissance</span></h1>
+      <p class="lede">Premium craftsmanship. Innovative techniques. Denim that defines the future.</p>
+      <div class="ctas">
+        <a class="btn solid" href="#/contact">Request a quote</a>
+        <a class="btn" href="#/catalog">Explore the catalog</a>
+      </div>
+    </div>
+    <div class="facts"><div class="wrap">
+      <div><small>Established</small><span>1999 · Karachi, Pakistan</span></div>
+      <div><small>Model</small><span>Cut-to-pack, design to final packing</span></div>
+      <div><small>Ships to</small><span>United Kingdom, United States, Europe</span></div>
+    </div></div>
+  </section>
+
+  <section class="pad">
+    <div class="wrap split">
+      <div class="patch rv"><img src="assets/img/patch.jpg" alt="Embossed leather AH Denim patch on dark denim" loading="lazy"></div>
+      <div class="rv">
+        <p class="lab">Discover our heritage</p>
+        <h2 class="d d-l"><span class="s">Who are</span><span class="o">we</span></h2>
+        <div class="rule"></div>
+        <p class="lede">AH Denim crafts premium denim and woven apparel, recognised for innovation, quality and sustainable manufacturing. With over two decades in the industry, we deliver fashion-forward garments to leading global brands.</p>
+        <p class="quote-line">Our ability to deliver <b>flexibility, speed and precision</b> means every piece meets the highest standard, without compromising on style, quality or sustainability.</p>
+        <div class="tags"><span>Premium fabrics</span><span>Innovative washes</span><span>Sustainable future</span></div>
+        <a class="link" href="#/about">Our story</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0">
+    <div class="wrap split">
+      <div class="film rv">
+        <video id="film" src="assets/video/factory.mp4" poster="assets/img/factory-film.jpg" muted loop playsinline preload="metadata" aria-label="Factory film: printing and finishing at AH Denim"></video>
+      </div>
+      <div class="rv">
+        <p class="lab">See it in motion</p>
+        <h2 class="d d-m"><span class="s">Craftsmanship</span><span class="o">in action</span></h2>
+        <div class="rule"></div>
+        <p class="lede">Watch raw materials become finished denim. The work shows in every stitch, wash and finishing touch, from the inside out.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0">
+    <div class="wrap">
+      <div class="cols-head rv">
+        <div><p class="lab">Our collections</p><h2 class="d d-l"><span class="s">Denim for</span><span class="o">every generation</span></h2></div>
+        <a class="link" href="#/catalog">Browse all 64 styles</a>
+      </div>
+      <div class="cols rv">
+        <a class="col" href="#/catalog/man"><img src="assets/img/col-men.jpg" alt="Men's embroidered denim jacket and jeans on mannequin" loading="lazy"><span class="n">32 styles</span><div class="cap"><h3>MEN</h3><p>Timeless. Versatile. Built to perform.</p></div></a>
+        <a class="col" href="#/catalog/woman"><img src="assets/img/col-women.jpg" alt="Women's brown denim jacket and polka-dot wide-leg trousers" loading="lazy"><span class="n">21 styles</span><div class="cap"><h3>WOMEN</h3><p>Confident. Contemporary. Designed to empower.</p></div></a>
+        <a class="col" href="#/catalog/kids"><img src="assets/img/col-kids.jpg" alt="Kids' denim jacket, jeans and cap" loading="lazy"><span class="n">11 styles</span><div class="cap"><h3>KIDS</h3><p>Comfort. Quality. Made for movement.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad" style="padding-top:0" id="craft">
+    <div class="wrap">
+      <div class="tech-head rv">
+        <div><p class="lab">What we create</p><h2 class="d d-l"><span class="s">The full spectrum of</span><span class="o">craft</span></h2></div>
+        <p class="lede">Simple silhouettes or intricate detailing, both with the same obsession. Five signature techniques, each available fully custom to your brand.</p>
+      </div>
+    </div>
+    <div class="tech" id="tech" role="region" aria-label="Signature techniques">
+      <div class="tech-pic" id="techPic"><span class="num" data-t id="techNum">01</span></div>
+      <div class="tech-body">
+        <p class="lab" data-t id="techKick">Precision technique</p>
+        <h3 class="d d-l" data-t id="techTitle"><span class="s">Laser</span><span class="o">artistry</span></h3>
+        <div class="rule"></div>
+        <p class="lede" data-t id="techText"></p>
+        <div class="tech-tabs" role="tablist" id="techTabs"></div>
+      </div>
+      <div class="tech-feat" data-t id="techFeat"></div>
+    </div>
+  </section>
+
+  <section class="floor pad">
+    <div class="bg" style="background-image:url(assets/img/floor-worker.jpg)"></div>
+    <div class="wrap" style="position:relative">
+      <div style="max-width:620px" class="rv">
+        <p class="lab">Behind every great denim</p>
+        <h2 class="d d-l"><span class="s">From concept</span><span class="o">to creation</span></h2>
+        <div class="rule"></div>
+        <p class="lede" style="margin-bottom:44px">Our facility pairs modern machinery with skilled hands, so denim moves from sample to shipment without leaving our floor.</p>
+        <div class="nums">
+          <div><strong>25+</strong><span>Years of experience</span></div>
+          <div><strong>150K+</strong><span>Garments per month</span></div>
+          <div><strong>500+</strong><span>Skilled professionals</span></div>
+          <div><strong>8-step</strong><span>In-house wash process</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="wrap split">
+      <div class="rv">
+        <p class="lab">Where we ship</p>
+        <h2 class="d d-l"><span class="s">Global</span><span class="o">operations</span></h2>
+        <div class="rule"></div>
+        <p class="lede">AH Denim supplies fashion houses and retail brands across three key markets, built on 25+ years of manufacturing trust.</p>
+      </div>
+      <div class="rv">
+        <div class="bar" role="img" aria-label="Share of business: United Kingdom 60 percent, United States 20 percent, Europe 20 percent"><i class="m1" style="width:60%"></i><i class="m2" style="width:20%"></i><i class="m3" style="width:20%"></i></div>
+        <ul class="mkts">
+          <li><i class="m1"></i><div><b>United Kingdom</b><small>Primary market</small></div><em>60%</em></li>
+          <li><i class="m2"></i><div><b>United States</b><small>Emerging market</small></div><em>20%</em></li>
+          <li><i class="m3"></i><div><b>Europe</b><small>Expanding reach</small></div><em>20%</em></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="washer">
+    <div class="bg" style="background-image:url(assets/img/washer.jpg)"></div>
+    <div class="wrap" style="position:relative">
+      <div style="max-width:560px" class="rv">
+        <p class="lab">Explore our process</p>
+        <h2 class="d d-l"><span class="s">See our</span><span class="s hl">whole</span><span class="s">washing process</span></h2>
+        <div class="rule"></div>
+        <p class="lede" style="margin-bottom:36px">From stonewash to enzyme treatments, every technique that gives our denim its character, texture and longevity, shown step by step on our own floor.</p>
+        <a class="btn" href="#/about/process">View the 8-step process</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad">
+    <div class="wrap">
+      <div class="rv" style="text-align:center">
+        <p class="lab c">Trusted partners</p>
+        <h2 class="d d-l"><span class="s">Our clients</span></h2>
+        <p class="lede" style="margin:24px auto 0;text-align:center">Proud to produce for leading global fashion brands and pioneering startups, at every scale.</p>
+      </div>
+      <div class="clients rv" id="clients"></div>
+    </div>
+  </section>
+</main>
+
+<!-- =================== CATALOG =================== -->
+<main data-view="catalog">
+  <header class="phead c">
+    <div class="wrap">
+      <p class="lab c">Our collections</p>
+      <h1 class="d d-l"><span class="s">Explore our</span><span class="o">catalog</span></h1>
+      <p class="lede" style="margin-top:24px">Tap any style to see details. Add styles to your enquiry list and we'll quote them together.</p>
+    </div>
+  </header>
+  <div class="cat-bar"><div class="wrap">
+    <div class="cat-tabs" role="tablist" id="catTabs">
+      <button role="tab" data-cat="man" aria-selected="true">Men<sup>32</sup></button>
+      <button role="tab" data-cat="woman" aria-selected="false">Women<sup>21</sup></button>
+      <button role="tab" data-cat="kids" aria-selected="false">Kids<sup>11</sup></button>
+    </div>
+    <label class="search"><span class="sr">Search catalog</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search styles, e.g. cargo">
+    </label>
+  </div></div>
+  <section class="wrap" style="padding-bottom:120px">
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<!-- =================== ABOUT =================== -->
+<main data-view="about">
+  <section class="phead" style="border:0;padding-bottom:0">
+    <div class="wrap split" style="align-items:end">
+      <div>
+        <p class="lab">About AH Denim</p>
+        <h1 class="d d-l"><span class="s">Legacy of</span><span class="o">excellence</span></h1>
+        <div class="rule"></div>
+        <p class="lede"><b style="color:var(--paper);font-weight:600">Since 1999</b>, AH Denim has grown into a leading cut-to-pack manufacturer of denim and woven garments for men, women and kids. Two manufacturing units and in-house laundry let us handle everything from design development to final packaging under one roof.</p>
+        <div class="pillars">
+          <div><h4>Cut-to-pack solutions</h4><p>Every production stage in-house, for tighter quality control and faster turnaround.</p></div>
+          <div><h4>Advanced facilities</h4><p>Modern laundry systems for precision-finished garments and sustainable practice.</p></div>
+          <div><h4>Sustainability</h4><p>Eco-conscious washing that reduces environmental impact, including closed-loop water recycling.</p></div>
+        </div>
+      </div>
+      <figure class="pocket" style="margin:0"><img src="assets/img/pocket.jpg" alt="Back pocket label reading Inspired by the fear of being average"></figure>
+    </div>
+  </section>
+
+  <section class="pad" id="overview">
+    <div class="wrap">
+      <p class="lab c">Overview</p>
+      <div class="over" style="margin-top:28px">
+        <div><strong>150K+</strong><span>Monthly capacity</span><p>Garments produced per month, and growing.</p></div>
+        <div><strong>500+</strong><span>Skilled team</span><p>Professionals crafting premium denim.</p></div>
+        <div><strong>$30M</strong><span>Annual revenue</span><p>Consistent growth in international markets.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="border-top:1px solid var(--line)">
+    <div class="wrap" style="padding:80px 0 20px">
+      <p class="lab">Finishing mastery</p>
+      <h2 class="d d-m"><span class="s">Our washing process</span><span class="o">in 8 steps</span></h2>
+    </div>
+    <div class="proc">
+      <div class="proc-pic" id="procPic"><span class="tag" id="procTag">Core process</span><div class="proc-meter"><i id="procMeter"></i></div></div>
+      <div class="steps" id="steps"></div>
+    </div>
+  </section>
+
+  <section class="pad" id="expo">
+    <div class="wrap">
+      <p class="lab">On the show floor</p>
+      <h2 class="d d-l" style="margin-bottom:48px"><span class="s">Our expo</span></h2>
+      <div class="expo">
+        <figure><img src="assets/img/expo.jpg" alt="Buyers meeting the AH Denim team at the Karachi TEXPO booth" loading="lazy"></figure>
+        <div class="expo-cards">
+          <div><h4>Expo exhibitions</h4><p>We take part in global trade shows to show our denim innovation and sustainable manufacturing. Most recently, Karachi TEXPO.</p></div>
+          <div><h4>Karachi TEXPO</h4><p>Our booth welcomed retailers, designers and sourcing professionals from several countries, and showed our sustainable denim range.</p></div>
+          <div><h4>Global market</h4><p>We introduced customisation and low-MOQ options, so buyers can order tailored styles in flexible quantities alongside our washing capabilities.</p></div>
+          <div><h4>Future innovation</h4><p>More launches are planned for upcoming trade shows as we keep pushing what denim manufacturing can do.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- =================== CONTACT =================== -->
+<main data-view="contact">
+  <header class="phead">
+    <div class="wrap">
+      <p class="lab">Get in touch</p>
+      <h1 class="d d-l"><span class="s">Start your</span><span class="o">production run</span></h1>
+      <p class="lede" style="margin-top:24px">Tell us what you need made. We reply to every enquiry with next steps for sampling and costing.</p>
+    </div>
+  </header>
+  <section class="pad" style="padding-top:clamp(40px,6vw,72px)">
+    <div class="wrap ct">
+      <div>
+        <div class="info">
+          <a href="https://wa.me/923248270610" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.4-.9-2.8-1.2-4.6-4.1-4.8-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2.1 1.3 2.4 1.4.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></i><div><small>WhatsApp</small><span>+92 324 8270610</span></div></a>
+          <a href="tel:+923248270610"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></i><div><small>Phone</small><span>+92 324 8270610</span></div></a>
+          <a href="mailto:Natalia@ahdenim.net"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i><div><small>Email</small><span>Natalia@ahdenim.net</span></div></a>
+          <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></i><div><small>Factory</small><span>Plot No. 19/5, Sector 12-C, North Karachi Industrial Area, Karachi 75850, Pakistan</span></div></div>
+        </div>
+        <div class="map">
+          <p>Visiting the factory? Open the exact location in Google Maps for directions.</p>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=AH+Denim+Sector+12-C+North+Karachi+Industrial+Area" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+
+      <form class="rfq" id="rfq" novalidate>
+        <h2 class="d d-s">Request a quote</h2>
+        <p class="sub">Fields marked * are required. A tech pack helps us cost faster, but it's optional.</p>
+        <div class="fg">
+          <div class="f"><label for="fName">Your name *</label><input id="fName" name="name" autocomplete="name" required><p class="err">Enter your name.</p></div>
+          <div class="f"><label for="fCo">Brand / company *</label><input id="fCo" name="company" autocomplete="organization" required><p class="err">Enter your brand or company.</p></div>
+          <div class="f"><label for="fEmail">Email *</label><input id="fEmail" name="email" type="email" autocomplete="email" required><p class="err">Enter a valid email, like name@brand.com.</p></div>
+          <div class="f"><label for="fPhone">Phone / WhatsApp</label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
+          <fieldset class="f full"><legend>Categories</legend>
+            <div class="chips"><label><input type="checkbox" name="cat" value="Men">Men</label><label><input type="checkbox" name="cat" value="Women">Women</label><label><input type="checkbox" name="cat" value="Kids">Kids</label></div>
+          </fieldset>
+          <fieldset class="f full"><legend>Techniques of interest</legend>
+            <div class="chips"><label><input type="checkbox" name="tech" value="Laser">Laser</label><label><input type="checkbox" name="tech" value="Appliqué">Appliqué</label><label><input type="checkbox" name="tech" value="Embroidery">Embroidery</label><label><input type="checkbox" name="tech" value="Graphic print">Graphic print</label><label><input type="checkbox" name="tech" value="Utility cargo">Utility cargo</label><label><input type="checkbox" name="tech" value="Custom washes">Custom washes</label></div>
+          </fieldset>
+          <div class="f"><label for="fQty">Estimated quantity</label><select id="fQty" name="qty"><option value="">Select a range</option><option>Under 500 pcs</option><option>500 – 2,000 pcs</option><option>2,000 – 10,000 pcs</option><option>10,000+ pcs</option></select></div>
+          <div class="f"><label for="fWhen">Target delivery</label><input id="fWhen" name="when" type="month"></div>
+          <div class="f full"><label>Styles from the catalog</label><div class="styles-picked" id="picked"></div></div>
+          <div class="f full"><span class="lbl">Tech pack</span><label class="drop" for="fPack" id="dropLab">Attach a tech pack (PDF, image or ZIP)<input id="fPack" type="file" accept=".pdf,.png,.jpg,.jpeg,.zip"></label></div>
+          <div class="f full"><label for="fMsg">Project details *</label><textarea id="fMsg" name="msg" required placeholder="Fits, fabric weight, wash, trims, labelling, anything we should know"></textarea><p class="err">Tell us a little about the project.</p></div>
+        </div>
+        <div class="acts">
+          <button class="btn solid" type="submit">Send enquiry</button>
+          <button class="btn wa" type="button" id="waSend">Send on WhatsApp</button>
+        </div>
+        <p class="done" id="done" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- =================== FAQ =================== -->
+<main data-view="faq">
+  <header class="phead c">
+    <div class="wrap">
+      <p class="lab c">Find answers</p>
+      <h1 class="d d-l"><span class="s">Frequently asked</span><span class="o">questions</span></h1>
+      <p class="lede" style="margin-top:24px">How we manufacture, what we can make, and how to bring your denim to life with us.</p>
+    </div>
+  </header>
+  <section class="pad" style="padding-top:clamp(40px,6vw,72px)">
+    <div class="wrap faq" id="faq"></div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <p class="lab">AH Denim</p>
+        <h2 class="d d-s"><span class="s">The denim</span><span class="s">renaissance</span></h2>
+        <p>Cut-to-pack denim and woven garments for men, women and kids, made in Karachi since 1999.</p>
+        <div class="soc">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L.6 3h6.8l4.7 6.2zm-1.1 16h1.8L6.7 4.9H4.8z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8a3 3 0 0 0-2-2c-1.8-.5-8-.5-8-.5s-6.2 0-8 .5a3 3 0 0 0-2 2 31 31 0 0 0 0 8 3 3 0 0 0 2 2c1.8.5 8 .5 8 .5s6.2 0 8-.5a3 3 0 0 0 2-2 31 31 0 0 0 0-8zM10 15V9l5 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="contact">
+        <h5>Contact</h5>
+        <div><small>Email</small><a href="mailto:Natalia@ahdenim.net">Natalia@ahdenim.net</a></div>
+        <div><small>Phone / WhatsApp</small><a href="tel:+923248270610">+92 324 8270610</a></div>
+        <div><small>Factory</small>Sector 12-C, North Karachi Industrial Area</div>
+      </div>
+      <div><h5>About AH Denim</h5><ul>
+        <li><a href="#/about">About us</a></li><li><a href="#/about/overview">Overview</a></li><li><a href="#/about/process">Washing process</a></li><li><a href="#/about/expo">Our expo</a></li><li><a href="#/faq">FAQs</a></li>
+      </ul></div>
+      <div><h5>Collections</h5><ul>
+        <li><a href="#/catalog/man">Men's collection</a></li><li><a href="#/catalog/woman">Women's collection</a></li><li><a href="#/catalog/kids">Kids' collection</a></li><li><a href="#/contact">Request a quote</a></li>
+      </ul></div>
+    </div>
+    <div class="bot"><span>© <span id="yr">2026</span> AH Denim. All rights reserved.</span><span>Crafted to inspire</span></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/923248270610" target="_blank" rel="noopener" aria-label="Chat with AH Denim on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.4-.9-2.8-1.2-4.6-4.1-4.8-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2.1 1.3 2.4 1.4.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.2.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+
+<dialog id="pd"><button class="x" type="button" aria-label="Close" data-close>×</button><div class="pd" id="pdBody"></div></dialog>
+
+<script>
+/* ============ DATA ============ */
+const A=p=>p;
+const WA='923248270610', MAIL='Natalia@ahdenim.net';
+const MAN=[
+["Timeless Workwear-Inspired Zip-Up Jacket","A durable workwear-inspired jacket with a contrasting collar, full-zip front and spacious front pockets. Its neutral colour and timeless cut layer over casual or semi-formal outfits."],
+["Vintage Wash Denim Hoodie Jacket","Premium washed denim with a rugged distressed look and contrast stitching. Zip-up closure, attached hood and double chest pockets."],
+["Vintage Washed Workwear Jacket","Heavyweight cotton canvas with a distressed wash that deepens over time. Boxy relaxed fit, dual front pockets, sturdy zip and reinforced stitching."],
+["Vintage Washed Straight-Leg Denim Jeans","Washed-out, distressed finish on a straight-leg fit with a traditional five-pocket design and durable construction."],
+["Vintage Washed Wide-Leg Denim Jeans","A relaxed wide-leg fit with a distressed wash and whiskering details, in premium denim that stays soft."],
+["Dual-Waistband High-Rise Straight-Leg Jeans","A distinctive layered waistband on a high-rise, straight-leg cut, with faded wash and contrast stitching."],
+["Two-Tone Contrast Patchwork Slim-Fit Jeans","A raw-cut denim overlay creates a layered, deconstructed look: light-wash upper against a dark, cargo-style lower half."],
+["Vintage Washed Distressed Straight-Leg Jeans","Heavy distressing and a unique faded wash in earthy brown tones, cut in a relaxed straight leg."],
+["Patchwork Distressed Skinny Jeans","Slim tapered fit with ripped detailing and multi-textured patchwork, including leather panels and a leopard-print accent, on washed-grey denim."],
+["Vintage Wide-Leg Distressed Jeans","Relaxed wide-leg silhouette in classic blue with faded wash, distressed knee rips and stitched panel detailing."],
+["Vintage Acid-Wash Cargo Jeans","Wide-leg silhouette with an acid-wash finish and multiple cargo pockets."],
+["Classic Beige Cargo Pants","Slim-straight fit with multiple cargo pockets, in durable yet soft fabric."],
+["Light Wash Skinny Fit Jeans","Stretch fabric for a snug, flexible fit, a light vintage wash and classic five-pocket design."],
+["Distressed Slim Fit Denim Jeans","Heavily ripped details and a washed-out finish on a slim fit in premium denim."],
+["Slim Fit Tie-Dye Washed Denim Jeans","A striking white-wash pattern on deep indigo denim, in a slim fit."],
+["Slim Fit Faded Denim Jeans","A gradual fade on premium blue stretch denim, in a streamlined slim fit."],
+["Slim Fit Biker Distressed Jeans","Premium stretch denim with distressed knees, ribbed panelling and zippered ankles in a faded black wash."],
+["Slim Fit Distressed Blue Denim Jeans","Light blue stretch denim with whiskering, distressing and subtle knee rips."],
+["Classic Straight Fit Dark Blue Denim Jeans","Straight-leg cut in a dark blue wash with subtle fading, in soft, breathable premium denim."],
+["Classic Straight Fit Light Blue Denim Jeans","Relaxed straight-leg silhouette with a light blue wash and natural fading."],
+["Vintage Wash Relaxed Fit Cargo Denim Jeans","Relaxed straight leg with multiple utility pockets and a vintage faded wash."],
+["Distressed Slim Fit Ripped Denim Jeans","Distressed patches with underlay fabric on a slim fit in high-quality stretch denim."],
+["Two-Tone Panel Denim Jeans","Heavyweight denim with contrast panel construction, slim straight fit, five-pocket styling, contrast stitching and a button fly."],
+["Vintage Washed Cargo Jeans","Relaxed fit with large patch pockets, adjustable hem straps and an elastic waistband with button closure."],
+["Vintage Distressed Wide-Leg Jeans","Relaxed wide-leg cut with an aged wash and subtle distressing."],
+["Vintage Washed Denim Shorts","Premium denim with a soft, worn-in wash in a knee-length cut."],
+["Double-Waistband Vintage Denim Jeans","A layered waistband with faded wash and contrast stitching."],
+["Distressed Ripped Slim-Fit Jeans","Frayed rips, abrasions, vintage wash and scattered paint-splatter accents."],
+["Vintage Multi-Pocket Cargo Jeans","Relaxed straight-leg fit with multiple cargo pockets and a faded blue wash."],
+["Distressed Patchwork Straight-Leg Jeans","Heavy distressing with textured contrast patchwork on a relaxed straight leg."],
+["Star Patch Vintage Denim Jeans","Star-shaped distressed patches and a faded wash on a relaxed straight leg."],
+["Black Relaxed-Fit Cargo Pants","Soft, durable fabric with a stretch waistband and multiple cargo pockets."]
+];
+const WOMAN=["High Waisted Wide Leg Denim – Sand Beige","High Waisted Distressed Flared Denim – Blue","High Waisted Wide Leg Jeans – Dark Brown","Two-Tone High Waisted Wide Leg Jeans – Vintage Wash","Classic Straight Leg Mid-Rise Jeans – Dark Wash","Dual Waistband Wide Leg Jeans – Vintage Wash","Distressed Denim Cargo Pants","Classic Denim Shirt","Chocolate Brown Denim Jacket","Colour Block Wide Leg Jeans","Washed Wide Leg Jeans","Flared Jeans","Distressed Patchwork Denim Jacket","Washed Canvas Vest","Star Appliqué Chambray Shirt","Shadow Wash Wide Leg Jeans","Distressed Dark Wash Flared Jeans","Leopard Print Straight Leg Pants","Diamond Wash Straight Leg Jeans","Dark Wash Straight Leg Jeans","Classic Black Straight Leg Pants"];
+const KIDS=["Blue Camo Denim Shorts","Checkered Denim Shorts","High Waisted Paperbag Denim Shorts","Tapered Black Denim Shorts","Light Blue Denim Shorts","Casual Cargo Denim Shorts – Light Blue","Distressed Denim Shorts – Dark Blue","Vintage Pleated Denim Mini Skirt – Dark Wash","Casual High Waisted Tapered Pants – Camel Brown","Embroidered Patchwork Denim Jeans – Black Wash","Cargo Jogger Denim Pants – Dark Wash"];
+const pad=n=>String(n).padStart(2,'0');
+const P={
+  man:MAN.map((x,i)=>({id:'man-'+pad(i+1),cat:'man',label:'Men',name:x[0],desc:x[1]})),
+  woman:WOMAN.map((n,i)=>({id:'woman-'+pad(i+1),cat:'woman',label:'Women',name:n,desc:''})),
+  kids:KIDS.map((n,i)=>({id:'kids-'+pad(i+1),cat:'kids',label:'Kids',name:n,desc:''}))
+};
+const ALL=[...P.man,...P.woman,...P.kids];
+const img=id=>A('assets/products/'+id+'.jpg');
+
+const TECH=[
+ {key:'laser',tab:'Laser',kick:'Precision technique',a:'var(--gold)',s:'Laser',o:'artistry',img:'assets/img/tech-laser.jpg',
+  text:'Precision laser technology burns intricate tribal and flame patterns directly onto premium denim: bold, one-of-a-kind designs with razor-sharp detail and zero dye.',
+  f:[['Precise laser finish','High-precision beams etch sharp, intricate patterns with consistent accuracy.'],['Sustainable process','Zero water and chemical use, an eco-responsible finishing technique.'],['Unique appearance','One-of-a-kind tribal, flame and geometric effects on every piece.'],['Custom design','Endless possibilities, fully tailored to your brand.']]},
+ {key:'applique',tab:'Appliqué',kick:'Artisan craft',a:'var(--steel)',s:'Appliqué',o:'design',img:'assets/img/tech-applique.jpg',
+  text:'Raised 3D appliqué hand-stitched onto premium denim: bold chain and sculptural motifs that add texture, depth and a high-fashion edge.',
+  f:[['Raised 3D texture','Hand-applied sculptural elements create dramatic depth.'],['Intricate stitching','Each motif sewn for clean edges and a long-lasting hold.'],['High-fashion appeal','Bold chain and rope-like designs that command attention.'],['Custom motifs','Bespoke appliqué patterns crafted to your creative direction.']]},
+ {key:'embroidery',tab:'Embroidery',kick:'Threadwork mastery',a:'var(--green)',s:'Embroidery',o:'craft',img:'assets/img/tech-embroidery.jpg',
+  text:'Floral and oriental motifs hand-embroidered onto black premium denim, turning each garment into wearable art.',
+  f:[['Intricate threadwork','Multi-colour threads layered with precision for depth and richness.'],['Oriental inspired','Floral, bird and botanical motifs from Japanese and eastern art.'],['Placement accuracy','Every motif positioned and scaled to suit the cut.'],['Custom artwork','Embroidery designed from scratch to match your identity.']]},
+ {key:'graphic',tab:'Graphic print',kick:'Street art aesthetic',a:'var(--gold)',s:'Graphic',o:'print',img:'assets/img/tech-graphic.jpg',
+  text:'Graffiti-inspired typography and tag art printed onto light-wash denim, in vivid colour with razor-sharp precision.',
+  f:[['Vivid colour output','High-saturation inks that hold through repeated washes.'],['Sharp print detail','Fine-line lettering and artwork reproduced accurately.'],['Street culture edge','Urban tag and type motifs for youth and streetwear audiences.'],['Fully custom artwork','Your graphics, logos or artwork printed exactly as designed.']]},
+ {key:'cargo',tab:'Utility cargo',kick:'Functional fashion',a:'var(--steel)',s:'Utility',o:'cargo',img:'assets/img/tech-cargo.jpg',
+  text:'Oversized wide-leg cargo jeans with large utility pockets and heavyweight distressed denim, blending raw function with modern streetwear.',
+  f:[['Multi-pocket build','Oversized cargo pockets with reinforced stitching.'],['Heavyweight denim','12–14 oz structured fabric that holds its shape.'],['Distressed wash','Stone and enzyme washing for an authentic worn-in grey.'],['Streetwear silhouette','Wide-leg oversized cut for the fashion-forward customer.']]}
+];
+
+const STEPS=[
+ ['Core process','Yilmak EcoGreen EG-W 400','Industrial','washing','Our Yilmak EcoGreen machines run stone wash, enzyme wash and colour-correction cycles with controlled drum speed, temperature and chemical dosing. The closed-loop system recycles up to 60% of water.'],
+ ['Capacity','Scale & throughput','Full floor','operations','Our two-floor laundry runs several wash programmes at once. A fleet of industrial washers works in parallel, processing thousands of garments per shift with quality checks between every cycle.'],
+ ['Foundation','Production infrastructure','Water supply','system','Every wash begins at the source. A dedicated production-tank network feeds each machine with controlled temperature, pressure and chemical ratios, for repeatable results across every batch.'],
+ ['Preparation','Pre-wash preparation','Garment','loading','Raw denim is sorted by weight, colour and wash recipe before loading. Careful batching means every garment in a run gets identical treatment from first rinse to final finish.'],
+ ['Drying','Yilmak HNS 4065 · Eco Friendly 2020','Steam','drying','Steam drying removes moisture precisely, preserving the denim\'s structure, preventing shrinkage deviation and setting the wash effect before finishing.'],
+ ['Volume drying','Industrial dryer banks','High-speed tumble','drying','A bank of industrial tumble dryers runs in rotation so production never stalls. Every garment leaves dry, softened and ready for spray finishing.'],
+ ['Finishing setup','Controlled spray booths','Spray finishing','setup','Garments are hung and staged in enclosed spray booths. The sealed space prevents overspray so technicians can apply bleach, potassium permanganate and colour effects to exact specification.'],
+ ['Artisan step','Artisan finishing','Hand spray','application','Trained technicians hand-spray each garment, applying fades, tints and whiskers. This human touch gives a depth and variation machines alone cannot replicate.']
+];
+
+const CLIENTS=[
+ ['boohoo group plc','boohoo, boohooMAN, PrettyLittleThing, Nasty Gal, MissPap, Karen Millen, Coast, Warehouse, Oasis, Debenhams, Burton, Dorothy Perkins, Wallis',1],
+ ['PrettyLittleThing'],['Crosshatch'],['DSATR'],['B Couture'],['Prohibited'],['Threadhare'],['Aris'],['Wampum']
+];
+
+const FAQ=[
+ ['What types of denim products do you manufacture?','Denim and woven garments for men, women and kids: jeans in every fit from skinny to wide-leg, cargo pants, shorts, skirts, shirts, vests, jackets and hoodie jackets. Browse <a href="#/catalog">the catalog</a> for current styles.'],
+ ['Do you offer low MOQ or no minimum order quantity?','Yes, we offer low-MOQ and customisation options so you can order tailored styles in flexible quantities. Share your style and quantities in a <a href="#/contact">quote request</a> and we\'ll confirm what\'s possible.'],
+ ['What sustainability practices do you follow?','Our Yilmak EcoGreen washers run a closed-loop system that recycles up to 60% of water, and laser finishing uses no water or chemicals. See the <a href="#/about/process">washing process</a>.'],
+ ['Do you offer private label and OEM services?','Yes. As a cut-to-pack manufacturer we produce under your brand, from design development to final packaging.'],
+ ['How does the washing process affect the durability of denim?','Controlled drum speed, temperature and chemical dosing, plus steam drying, protect the fabric\'s structure and prevent shrinkage deviation, so the wash effect lasts without weakening the garment.'],
+ ['Do you ship internationally?','Yes. We supply brands in the United Kingdom, the United States and Europe.'],
+ ['How long does production take?','It depends on the style, quantity and finish. Send your tech pack or reference and we\'ll give you a sampling and production timeline with your quote.'],
+ ['Can you help with design and technical development?','Yes. Our team supports design development, and every signature technique (laser, appliqué, embroidery, graphic print) can be fully custom to your brand.'],
+ ['How can I get a quote or place an order?','Use the <a href="#/contact">quote request form</a>, message us on <a href="https://wa.me/923248270610" target="_blank" rel="noopener">WhatsApp</a>, or email <a href="mailto:Natalia@ahdenim.net">Natalia@ahdenim.net</a>. Adding styles from the catalog to your enquiry list saves time.']
+];
+
+/* ============ ENQUIRY LIST ============ */
+let picks=[];
+try{picks=JSON.parse(localStorage.getItem('ah-picks')||'[]')}catch(e){picks=[]}
+const savePicks=()=>{try{localStorage.setItem('ah-picks',JSON.stringify(picks))}catch(e){};renderTray();renderPicked();renderGrid()};
+const togglePick=id=>{picks=picks.includes(id)?picks.filter(x=>x!==id):[...picks,id];savePicks()};
+const byId=id=>ALL.find(p=>p.id===id);
+function renderTray(){document.getElementById('trayN').textContent=picks.length||''}
+function renderPicked(){
+  const el=document.getElementById('picked');
+  el.innerHTML=picks.length?picks.map(id=>`<span>${byId(id).label} · ${byId(id).name}<button type="button" data-unpick="${id}" aria-label="Remove ${byId(id).name}">×</button></span>`).join(''):'<em>None yet. Add styles from the <a class="link" style="font-size:10px" href="#/catalog">catalog</a>, or describe your own below.</em>';
+}
+document.getElementById('trayBtn').onclick=()=>{location.hash='#/contact'};
+
+/* ============ CATALOG ============ */
+let cat='man';
+const grid=document.getElementById('grid'),q=document.getElementById('q');
+function renderGrid(){
+  const term=q.value.trim().toLowerCase();
+  const list=P[cat].filter(p=>!term||p.name.toLowerCase().includes(term));
+  document.getElementById('count').textContent=`Showing ${list.length} ${list.length===1?'style':'styles'} in ${cat==='man'?'Men':cat==='woman'?'Women':'Kids'}${term?` for “${q.value.trim()}”`:''}`;
+  grid.innerHTML=list.length?list.map(p=>`<button class="card" type="button" data-open="${p.id}">
+      <span class="ph"><img src="${img(p.id)}" alt="${p.name}" loading="lazy"><span class="add ${picks.includes(p.id)?'in':''}" aria-hidden="true">${picks.includes(p.id)?'✓':'+'}</span></span>
+      <small>${p.id.split('-')[1]} · ${p.label.toUpperCase()}</small><h3>${p.name}</h3></button>`).join('')
+    :`<p class="empty">No ${cat==='man'?'men\'s':cat==='woman'?'women\'s':'kids\''} styles match “${q.value.trim()}”. Try a broader word like jeans, cargo or shorts.</p>`;
+}
+function setCat(c){cat=c;document.querySelectorAll('#catTabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.cat===c));renderGrid()}
+document.getElementById('catTabs').onclick=e=>{const b=e.target.closest('button');if(b)history.replaceState(null,'','#/catalog/'+b.dataset.cat),setCat(b.dataset.cat)};
+q.oninput=renderGrid;
+
+const dlg=document.getElementById('pd');
+function openProduct(id){
+  const p=byId(id),inList=picks.includes(id);
+  document.getElementById('pdBody').innerHTML=`<div class="ph"><img src="${img(id)}" alt="${p.name}"></div>
+   <div class="body"><p class="lab">${p.label} · Style ${id.split('-')[1]}</p><h2>${p.name}</h2>
+   <p>${p.desc||'Full specification available on request. Fabric, wash and trims can be adapted to your brand.'}</p>
+   <p class="muted" style="font-size:14px">Every style can be customised: fit, fabric weight, wash, trims and branding.</p>
+   <div class="acts"><button class="btn solid" type="button" data-pick="${id}">${inList?'Remove from enquiry':'Add to enquiry'}</button>
+   <a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Hi AH Denim, I\'d like a quote for: '+p.label+' – '+p.name+' (style '+id+')')}">Ask on WhatsApp</a></div></div>`;
+  dlg.showModal();
+}
+document.addEventListener('click',e=>{
+  const o=e.target.closest('[data-open]');if(o){openProduct(o.dataset.open);return}
+  const pk=e.target.closest('[data-pick]');if(pk){togglePick(pk.dataset.pick);openProduct(pk.dataset.pick);return}
+  const up=e.target.closest('[data-unpick]');if(up){togglePick(up.dataset.unpick);return}
+  if(e.target.closest('[data-close]')||e.target===dlg)dlg.close();
+});
+
+/* ============ TECHNIQUES ============ */
+const ICONS=['<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>','<path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14zM5 19l7-7"/>','<path d="M12 3l2.6 5.6L20 9.3l-4 4 1 5.7-5-2.8-5 2.8 1-5.7-4-4 5.4-.7z"/>','<path d="M4 20l4-1 11-11-3-3L5 16zM14 6l3 3"/>'];
+const tech=document.getElementById('tech'),techPic=document.getElementById('techPic');
+techPic.insertAdjacentHTML('afterbegin',TECH.map((t,i)=>`<img src="${t.img}" alt="${t.tab} denim on mannequin" ${i?'loading="lazy"':''} class="${i?'':'on'}">`).join(''));
+document.getElementById('techTabs').innerHTML=TECH.map((t,i)=>`<button role="tab" type="button" aria-selected="${!i}" data-i="${i}">${t.tab}</button>`).join('');
+let ti=0;
+function showTech(i,instant){
+  ti=(i+TECH.length)%TECH.length;const t=TECH[ti];
+  const apply=()=>{
+    tech.style.setProperty('--accent',t.a);
+    document.getElementById('techNum').textContent=pad(ti+1);
+    document.getElementById('techKick').textContent=t.kick;
+    document.getElementById('techTitle').innerHTML=`<span class="s">${t.s}</span><span class="o">${t.o}</span>`;
+    document.getElementById('techText').textContent=t.text;
+    document.getElementById('techFeat').innerHTML=t.f.map((f,k)=>`<div class="feat"><i><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6">${ICONS[k]}</svg></i><div><h4>${f[0]}</h4><p>${f[1]}</p></div></div>`).join('');
+    techPic.querySelectorAll('img').forEach((im,k)=>im.classList.toggle('on',k===ti));
+    document.querySelectorAll('#techTabs button').forEach((b,k)=>b.setAttribute('aria-selected',k===ti));
+    tech.classList.remove('swap');
+  };
+  if(instant)return apply();
+  tech.classList.add('swap');setTimeout(apply,300);
+}
+document.getElementById('techTabs').onclick=e=>{const b=e.target.closest('button');if(b)showTech(+b.dataset.i)};
+document.getElementById('techTabs').onkeydown=e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){showTech(ti+(e.key==='ArrowRight'?1:-1));setTimeout(()=>document.querySelectorAll('#techTabs button')[ti].focus(),320)}};
+showTech(0,true);
+
+/* ============ PROCESS ============ */
+const procPic=document.getElementById('procPic');
+procPic.insertAdjacentHTML('afterbegin',STEPS.map((s,i)=>`<img src="${A(`assets/img/step-${i+1}.jpg`)}" alt="" class="${i?'':'on'}" ${i?'loading="lazy"':''}>`).join(''));
+document.getElementById('steps').innerHTML=STEPS.map((s,i)=>`<article class="step ${i?'':'on'}" data-step="${i}">
+  <img class="m-pic" src="${A(`assets/img/step-${i+1}.jpg`)}" alt="${s[2]} ${s[3]} at AH Denim" loading="lazy">
+  <div class="no"><b>${pad(i+1)}</b><span>Step ${pad(i+1)} of 08<em>${s[1]}</em></span></div>
+  <h3 class="d d-m"><span class="s">${s[2]}</span><span class="o">${s[3]}</span></h3><div class="rule"></div><p class="lede">${s[4]}</p></article>`).join('');
+const stepIO=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const i=+en.target.dataset.step;
+  document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on',s===en.target));
+  procPic.querySelectorAll('img').forEach((im,k)=>im.classList.toggle('on',k===i));
+  document.getElementById('procTag').textContent=STEPS[i][0];
+  document.getElementById('procMeter').style.transform=`translateY(${i*100}%)`;
+}),{rootMargin:'-45% 0px -45% 0px'});
+document.querySelectorAll('.step').forEach(s=>stepIO.observe(s));
+
+/* ============ CLIENTS / FAQ ============ */
+document.getElementById('clients').innerHTML=CLIENTS.map(c=>`<div class="${c[2]?'big':''}"><div><b>${c[0]}</b>${c[1]?`<small>${c[1]}</small>`:''}</div></div>`).join('');
+document.getElementById('faq').innerHTML=FAQ.map((f,i)=>`<details ${i?'':'open'}><summary>${f[0]}<i aria-hidden="true">+</i></summary><div class="a">${f[1]}</div></details>`).join('');
+
+/* ============ FORM ============ */
+const form=document.getElementById('rfq');
+function summary(){
+  const fd=new FormData(form),v=k=>(fd.get(k)||'').toString().trim();
+  const cats=fd.getAll('cat').join(', '),techs=fd.getAll('tech').join(', ');
+  const styles=picks.map(id=>`- ${byId(id).label}: ${byId(id).name} (${id})`).join('\n');
+  return `Quote request – AH Denim website\n\nName: ${v('name')}\nCompany: ${v('company')}\nEmail: ${v('email')}\nPhone: ${v('phone')||'—'}\nCategories: ${cats||'—'}\nTechniques: ${techs||'—'}\nQuantity: ${v('qty')||'—'}\nTarget delivery: ${v('when')||'—'}\n${styles?`\nStyles:\n${styles}\n`:''}\nDetails:\n${v('msg')}`;
+}
+function validate(){
+  let ok=true;
+  form.querySelectorAll('[required]').forEach(inp=>{const f=inp.closest('.f');const bad=!inp.value.trim()||(inp.type==='email'&&!/^\S+@\S+\.\S+$/.test(inp.value));f.classList.toggle('bad',bad);if(bad&&ok){inp.focus();ok=false}});
+  return ok;
+}
+form.onsubmit=e=>{e.preventDefault();if(!validate())return;
+  const pack=document.getElementById('fPack').files[0];
+  location.href=`mailto:${MAIL}?subject=${encodeURIComponent('Quote request – '+form.company.value.trim())}&body=${encodeURIComponent(summary()+(pack?`\n\n(Tech pack: ${pack.name} – please attach it to this email.)`:''))}`;
+  const d=document.getElementById('done');d.textContent=`Your email app should now open with the enquiry filled in. Press send there to reach our team.${pack?' Remember to attach '+pack.name+'.':''} If nothing opened, email ${MAIL} or use WhatsApp.`;d.classList.add('on');
+};
+document.getElementById('waSend').onclick=()=>{if(!validate())return;window.open(`https://wa.me/${WA}?text=${encodeURIComponent(summary())}`,'_blank','noopener')};
+form.addEventListener('input',e=>{const f=e.target.closest('.f');if(f&&f.classList.contains('bad'))f.classList.remove('bad')});
+document.getElementById('fPack').onchange=e=>{const f=e.target.files[0];document.getElementById('dropLab').firstChild.textContent=f?`Attached: ${f.name}`:'Attach a tech pack (PDF, image or ZIP)'};
+
+/* ============ ROUTER ============ */
+const TITLES={home:'AH Denim — Cut-to-pack denim manufacturer, Karachi',catalog:'Catalog — AH Denim',about:'About us — AH Denim',contact:'Request a quote — AH Denim',faq:'FAQ — AH Denim'};
+const hdr=document.getElementById('hdr'),burger=document.getElementById('burger');
+function route(){
+  const [view='home',sub]=(location.hash.replace(/^#\/?/,'')||'home').split('/');
+  const v=TITLES[view]?view:'home';
+  document.querySelectorAll('[data-view]').forEach(m=>m.classList.toggle('on',m.dataset.view===v));
+  document.querySelectorAll('[data-nav]').forEach(a=>a.dataset.nav===v?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+  document.title=TITLES[v];
+  hdr.classList.remove('open');burger.setAttribute('aria-expanded','false');
+  if(v==='catalog')setCat(['man','woman','kids'].includes(sub)?sub:cat);
+  if(v==='contact')renderPicked();
+  const target=sub&&document.getElementById(sub);
+  if(target&&v!=='catalog')requestAnimationFrame(()=>target.scrollIntoView());else window.scrollTo(0,0);
+  observeReveals();onScroll();
+}
+window.addEventListener('hashchange',route);
+burger.onclick=()=>{const o=hdr.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+function onScroll(){hdr.classList.toggle('solid',scrollY>40||!document.querySelector('[data-view="home"]').classList.contains('on'))}
+addEventListener('scroll',onScroll,{passive:true});
+
+/* ============ REVEAL ============ */
+const rvIO=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');rvIO.unobserve(en.target)}}),{rootMargin:'0px 0px -10% 0px'});
+function observeReveals(){document.querySelectorAll('[data-view].on .rv:not(.in)').forEach(el=>rvIO.observe(el))}
+
+const film=document.getElementById('film');film.addEventListener('loadedmetadata',()=>film.controls=true);
+document.getElementById('yr').textContent=new Date().getFullYear();
+renderTray();
+route();
+requestAnimationFrame(()=>setTimeout(()=>document.getElementById('hero').classList.add('go'),60));
+</script>
+</body>
+</html>
